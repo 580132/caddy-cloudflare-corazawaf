@@ -3,15 +3,11 @@ name: Docker Build & Release
 on:
   workflow_dispatch:
   push:
-    branches:
-      - main
-      - dev
+    branches: [main, dev]
     paths:
       - Dockerfile
   pull_request:
-    branches:
-      - main
-      - dev
+    branches: [main, dev]
     paths:
       - Dockerfile
 
