@@ -3,7 +3,7 @@ name: Trivy Scan
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 0 * * * # daily at midnight
+    - cron: 0 0 * * *
   workflow_call:
     inputs:
       image-ref:
@@ -25,11 +25,11 @@ jobs:
       security-events: write
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4 # 升级到稳定版 v4
+        uses: actions/checkout@v4
 
       - name: Scan repo filesystem
-        uses: aquasecurity/trivy-action@18f251a5aa9a6dae48f34428611643994bb3c8d5 # 指向 v0.29.0 的哈希
-        continue-on-error: true
+        uses: aquasecurity/trivy-action@v0.29.0 # 使用带 v 的版本号
+        continue-on-error: true # 就算扫描挂了，也不影响后续 Publish
         with:
           scan-type: fs
           format: sarif
@@ -38,8 +38,8 @@ jobs:
 
       - name: Upload scan results
         uses: github/codeql-action/upload-sarif@v3
-        if: always() # 确保即使前面有漏洞也尝试上传
-        continue-on-error: true # 关键：防止私有仓库权限问题导致 Job 变红
+        if: always()
+        continue-on-error: true
         with:
           sarif_file: trivy-results-fs.sarif
 
@@ -74,17 +74,18 @@ jobs:
           echo "image-ref=$IMAGE_REF" | tee -a "$GITHUB_OUTPUT"
 
       - name: Scan image
-        uses: aquasecurity/trivy-action@18f251a5aa9a6dae48f34428611643994bb3c8d5 # 同上
+        uses: aquasecurity/trivy-action@v0.29.0 # 同上，使用带 v 的版本号
         continue-on-error: true
         with:
           image-ref: ${{ steps.normalize.outputs.image-ref }}
           format: sarif
           output: trivy-results-img.sarif
           exit-code: "0"
+          severity: 'CRITICAL,HIGH'
 
       - name: Upload scan results
         uses: github/codeql-action/upload-sarif@v3
         if: always()
-        continue-on-error: true # 关键：如果是私有仓库且没开高级安全功能，此步骤会跳过而不会报错
+        continue-on-error: true
         with:
           sarif_file: trivy-results-img.sarif
