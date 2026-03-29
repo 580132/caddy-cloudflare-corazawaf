@@ -63,7 +63,6 @@ jobs:
         id: docker-metadata
         with:
           images: |
-            docker.io/${{ steps.build-metadata.outputs.image-name }}
             ghcr.io/${{ steps.build-metadata.outputs.image-name }}
           tags: |
             type=semver,pattern={{version}},value=v${{ steps.build-metadata.outputs.caddy-version }}
