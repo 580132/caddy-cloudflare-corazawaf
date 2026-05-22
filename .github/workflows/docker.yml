@@ -285,8 +285,8 @@ jobs:
         with:
           format: spdx-json
           image: ${{ needs.metadata.outputs.image-name }}@${{ steps.publish.outputs.digest }}
-          artifact-name: ${{ needs.metadata.outputs.image-title }}.spdx.json
-          output-file: ${{ needs.metadata.outputs.image-title }}.spdx.json
+          artifact-name: sbom.spdx.json
+          output-file: sbom.spdx.json
 
       - name: Update Git tags
         shell: bash
