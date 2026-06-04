@@ -29,10 +29,10 @@ The following tags are the latest available for the
 `iarekylew00t/caddy-cloudflare` image.
 
 <!--START-TAGS-->
-- [`latest`](https://github.com/IAreKyleW00t/docker-caddy-cloudflare/tree/v2.11.3)
-- [`2.11.3`](https://github.com/IAreKyleW00t/docker-caddy-cloudflare/tree/v2.11.3)
-- [`2.11`](https://github.com/IAreKyleW00t/docker-caddy-cloudflare/tree/v2.11)
-- [`2`](https://github.com/IAreKyleW00t/docker-caddy-cloudflare/tree/v2)
+- [`latest`](https://github.com/580132/caddy-cloudflare-corazawaf/tree/v2.11.4)
+- [`2.11.4`](https://github.com/580132/caddy-cloudflare-corazawaf/tree/v2.11.4)
+- [`2.11`](https://github.com/580132/caddy-cloudflare-corazawaf/tree/v2.11)
+- [`2`](https://github.com/580132/caddy-cloudflare-corazawaf/tree/v2)
 <!--END-TAGS-->
 
 Check the GitHub
