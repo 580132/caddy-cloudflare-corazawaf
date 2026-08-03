@@ -314,9 +314,9 @@ jobs:
             ## 🐳 Docker Images
 
             ```
-            ${{ needs.metadata.outputs.image-name }}:latest
-            ${{ needs.metadata.outputs.image-name }}:${{ needs.metadata.outputs.caddy-version }}
-            ${{ needs.metadata.outputs.image-name }}@${{ steps.publish.outputs.digest }}
+            ${{ needs.metadata.outputs.image-name }}-crowdsec:latest
+            ${{ needs.metadata.outputs.image-name }}-crowdsec:${{ needs.metadata.outputs.caddy-version }}
+            ${{ needs.metadata.outputs.image-name }}-crowdsec@${{ steps.publish.outputs.digest }}
             ```
 
             ## 🔏 Signatures
