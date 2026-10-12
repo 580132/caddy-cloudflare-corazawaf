@@ -29,8 +29,8 @@ The following tags are the latest available for the
 `iarekylew00t/caddy-cloudflare` image.
 
 <!--START-TAGS-->
-- [`latest`](https://github.com/580132/caddy-cloudflare-corazawaf/tree/v2.11.6)
-- [`2.11.6`](https://github.com/580132/caddy-cloudflare-corazawaf/tree/v2.11.6)
+- [`latest`](https://github.com/580132/caddy-cloudflare-corazawaf/tree/v2.11.7)
+- [`2.11.7`](https://github.com/580132/caddy-cloudflare-corazawaf/tree/v2.11.7)
 - [`2.11`](https://github.com/580132/caddy-cloudflare-corazawaf/tree/v2.11)
 - [`2`](https://github.com/580132/caddy-cloudflare-corazawaf/tree/v2)
 <!--END-TAGS-->
